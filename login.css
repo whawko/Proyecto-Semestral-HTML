@@ -1,0 +1,230 @@
+/* =========================================
+   VARIABLES DE COLOR (Veterinaria)
+   ========================================= */
+:root {
+    --vet-bg-derecho: #FDFDFB; /* Fondo crema muy suave */
+    --vet-verde-oscuro: #1A5431; /* Verde principal */
+    --vet-verde-transparente: rgba(30, 71, 46, 0.85); /* Tarjeta izquierda */
+    --vet-texto-oscuro: #2C3E35;
+    --vet-texto-gris: #7A8B82;
+    --vet-borde: #E0E5E2;
+    --vet-demo-bg: #EBF5F0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--vet-bg-derecho);
+    height: 100vh;
+    overflow: hidden; /* Evita scroll en la pantalla principal */
+}
+
+/* =========================================
+   ESTRUCTURA DIVIDIDA (50/50)
+   ========================================= */
+.pantalla-dividida {
+    display: flex;
+    height: 100vh;
+}
+
+.panel-izquierdo {
+    flex: 1;
+    /* Aquí pones la ruta a la foto real del perrito */
+    background-image: url('https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&q=80'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end; /* Tira la tarjeta hacia abajo */
+    padding: 40px;
+}
+
+.panel-derecho {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--vet-bg-derecho);
+}
+
+/* =========================================
+   TARJETA IZQUIERDA (Estilo Vidrio/Glassmorphism)
+   ========================================= */
+.tarjeta-info {
+    background-color: var(--vet-verde-transparente);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cabecera-tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.avatar-vet {
+    background-color: white;
+    color: var(--vet-verde-oscuro);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: Georgia, serif;
+}
+
+.titulos-tarjeta h2 {
+    font-size: 20px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.titulos-tarjeta p {
+    font-size: 13px;
+    color: #D1E5D9;
+}
+
+.descripcion-vet {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #E8F0EA;
+}
+
+.grilla-badges {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.badge {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* =========================================
+   FORMULARIO DERECHO
+   ========================================= */
+.caja-login {
+    width: 100%;
+    max-width: 380px;
+}
+
+.caja-login h1 {
+    font-family: Georgia, serif;
+    color: var(--vet-verde-oscuro);
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    color: var(--vet-texto-gris);
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+}
+
+.grupo-input label {
+    display: block;
+    font-size: 13px;
+    color: var(--vet-texto-oscuro);
+    margin-bottom: 8px;
+}
+
+.grupo-input input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--vet-borde);
+    border-radius: 8px; /* Bordes más redondeados que el de música */
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.grupo-input input:focus {
+    border-color: var(--vet-verde-oscuro);
+}
+
+.btn-ingresar {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--vet-verde-oscuro);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: opacity 0.2s;
+}
+
+.btn-ingresar:hover {
+    opacity: 0.9;
+}
+
+.link-registro {
+    text-align: center;
+    font-size: 13px;
+    color: var(--vet-texto-gris);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.link-registro a {
+    color: var(--vet-verde-oscuro);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-registro a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   CAJA DE DEMOSTRACIÓN
+   ========================================= */
+.caja-demo {
+    background-color: var(--vet-demo-bg);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #B8D8C6;
+    font-size: 12px;
+    color: var(--vet-verde-oscuro);
+}
+
+.demo-titulo {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.caja-demo p {
+    margin-bottom: 5px;
+}
+
+.caja-demo code {
+    font-family: monospace;
+    background-color: rgba(255,255,255,0.6);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
