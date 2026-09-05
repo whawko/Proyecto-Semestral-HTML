@@ -93,7 +93,7 @@ footer {
 
 footer .fw-semibold,
 footer label {
-    color: #133E24  !important;
+    color: #133E24 !important;
 }
 
 footer a {
@@ -101,7 +101,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #ffffff !important;
+    color: #133E24  !important;
 }
 
 footer .text-muted {
@@ -125,4 +125,40 @@ footer .btn-dark:hover,
 .text-end.mb-3.small a {
     color: var(--vet-verde) !important;
     font-weight: 600;
+}
+
+.titulo-serif {
+    font-family: Georgia, 'Times New Roman', serif !important;
+}
+
+/* Efecto suave al pasar el mouse sobre la tarjeta */
+.tarjeta-noticia {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff !important;
+}
+
+.tarjeta-noticia:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Ajuste de imagen */
+.objeto-fit-cover {
+    object-fit: cover;
+}
+
+/* Botón 'Leer más' con estilo bordeado píldora */
+.btn-outline-vet-noticia {
+    border: 1px solid #c0c0c0;
+    color: #444444;
+    background-color: transparent;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-vet-noticia:hover {
+    background-color: var(--vet-verde, #1A5431);
+    border-color: var(--vet-verde, #1A5431);
+    color: #ffffff;
 }
