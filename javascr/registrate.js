@@ -4,14 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const comunaSelect = document.getElementById('comuna');
   const form = document.getElementById('registerForm');
 
-  // Mapeo de comunas por región
   const comunasPorRegion = {
     rm: ['Santiago', 'Providencia', 'Las Condes', 'Ñuñoa', 'Maipú'],
     valparaiso: ['Valparaíso', 'Viña del Mar', 'Concón', 'Quilpué'],
     biobio: ['Concepción', 'Talcahuano', 'San Pedro de la Paz', 'Chillán']
   };
 
-  // Cargar comunas al cambiar la región
+
   regionSelect.addEventListener('change', (e) => {
     const regionSeleccionada = e.target.value;
     const comunas = comunasPorRegion[regionSeleccionada] || [];

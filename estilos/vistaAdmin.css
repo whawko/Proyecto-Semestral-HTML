@@ -1,0 +1,49 @@
+/* PALETA DE COLORES PERSONALIZADA DE LA VETERINARIA */
+:root {
+    --vet-verde: #1A5431;
+    --vet-verde-hover: #133E24;
+    --vet-bg-caja: #EBF3ED;
+    --vet-oscuro: #11281A;
+    --vet-texto-muted: #A3B8AC;
+    --vet-verde-claro: #81C784;
+    --vet-morado: #673AB7;
+}
+
+/* FUENTES */
+.titulo-serif {
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* CLASES DE UTILIDAD DE COLOR */
+.bg-vet-verde { background-color: var(--vet-verde) !important; }
+.text-vet-verde { color: var(--vet-verde) !important; }
+.text-vet-morado { color: var(--vet-morado) !important; }
+.bg-vet-oscuro { background-color: var(--vet-oscuro) !important; }
+.text-vet-muted { color: var(--vet-texto-muted) !important; }
+.text-vet-verde-claro { color: var(--vet-verde-claro) !important; }
+
+/* BOTONES CON COLORES DE LA MARCA */
+.btn-vet-verde {
+    background-color: var(--vet-verde);
+    color: white;
+    border: none;
+}
+.btn-vet-verde:hover {
+    background-color: var(--vet-verde-hover);
+    color: white;
+}
+
+.btn-outline-vet-verde {
+    border: 1px solid var(--vet-verde);
+    color: var(--vet-verde);
+    background-color: transparent;
+}
+.btn-outline-vet-verde:hover {
+    background-color: var(--vet-verde);
+    color: white;
+}
+
+/* FONDO DE ACCESOS RÁPIDOS */
+.caja-accesos {
+    background-color: var(--vet-bg-caja);
+}

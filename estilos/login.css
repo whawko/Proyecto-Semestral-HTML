@@ -1,10 +1,8 @@
-/* =========================================
-   VARIABLES DE COLOR (Veterinaria)
-   ========================================= */
+
 :root {
-    --vet-bg-derecho: #FDFDFB; /* Fondo crema muy suave */
-    --vet-verde-oscuro: #1A5431; /* Verde principal */
-    --vet-verde-transparente: rgba(30, 71, 46, 0.85); /* Tarjeta izquierda */
+    --vet-bg-derecho: #FDFDFB;
+    --vet-verde-oscuro: #1A5431;
+    --vet-verde-transparente: rgba(30, 71, 46, 0.85);
     --vet-texto-oscuro: #2C3E35;
     --vet-texto-gris: #7A8B82;
     --vet-borde: #E0E5E2;
@@ -21,12 +19,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--vet-bg-derecho);
     height: 100vh;
-    overflow: hidden; /* Evita scroll en la pantalla principal */
+    overflow: hidden;
 }
 
-/* =========================================
-   ESTRUCTURA DIVIDIDA (50/50)
-   ========================================= */
+
 .pantalla-dividida {
     display: flex;
     height: 100vh;
@@ -34,7 +30,6 @@ body {
 
 .panel-izquierdo {
     flex: 1;
-    /* Aquí pones la ruta a la foto real del perrito */
     background-image: url('https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&q=80'); 
     background-size: cover;
     background-position: center;
