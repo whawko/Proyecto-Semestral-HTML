@@ -1,0 +1,171 @@
+/* PALETA DE COLORES E IDENTIDAD - VETERINARIA SAN MARCOS */
+:root {
+    --vet-verde: #1A5431;
+    --vet-verde-hover: #133E24;
+    --vet-verde-claro: #81C784;
+    --vet-bg-caja: #EBF3ED;
+    --vet-oscuro: #11281A;
+    --vet-texto-muted: #A3B8AC;
+    --vet-borde: #E0E5E2;
+}
+
+/* 1. TIPOGRAFÍA Y FUENTES GENERALES */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+    background-color: #f8faf9 !important;
+}
+
+h1, h2, h3, .navbar-brand {
+    font-family: Georgia, 'Times New Roman', serif !important;
+}
+
+/* 2. ENCABEZADO Y LOGO */
+.navbar-brand {
+    color: var(--vet-verde) !important;
+}
+
+.navbar-brand .badge {
+    background-color: var(--vet-verde) !important;
+}
+
+/* Enlaces del menú */
+.navbar-nav .nav-link {
+    color: #444 !important;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--vet-verde) !important;
+}
+
+/* 3. CAJAS, BANNERS Y SECCIONES DE CONTENIDO */
+section.bg-secondary.bg-opacity-25,
+div.bg-secondary.bg-opacity-25 {
+    background-color: var(--vet-bg-caja) !important;
+    border: 1px solid var(--vet-borde);
+}
+
+section.bg-secondary h1,
+section h1,
+section h2,
+section h3 {
+    color: var(--vet-verde) !important;
+}
+
+/* Botones con borde de contorno */
+.btn-outline-dark {
+    border-color: var(--vet-verde) !important;
+    color: var(--vet-verde) !important;
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--vet-verde) !important;
+    color: #ffffff !important;
+}
+
+/* 4. TARJETAS */
+.card.bg-secondary.bg-opacity-25 {
+    background-color: #ffffff !important;
+    border: 1px solid var(--vet-borde) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card.bg-secondary.bg-opacity-25:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(26, 84, 49, 0.08);
+}
+
+.card-title.text-primary {
+    color: var(--vet-verde) !important;
+}
+
+.card-title.text-primary:hover {
+    color: var(--vet-verde-hover) !important;
+}
+
+/* 5. FOOTER Y SUS ELEMENTOS */
+footer {
+    background-color: var(--vet-oscuro) !important;
+    color: #ffffff !important;
+    border-top: none !important;
+}
+
+footer .fw-semibold,
+footer label {
+    color: #133E24 !important;
+}
+
+footer a {
+    color: var(--vet-verde-claro) !important;
+}
+
+footer a:hover {
+    color: #133E24  !important;
+}
+
+footer .text-muted {
+    color: var(--vet-texto-muted) !important;
+}
+
+/* Botones principales y de Newsletter */
+footer .btn-dark,
+.btn-dark {
+    background-color: var(--vet-verde) !important;
+    border-color: var(--vet-verde) !important;
+}
+
+footer .btn-dark:hover,
+.btn-dark:hover {
+    background-color: var(--vet-verde-hover) !important;
+    border-color: var(--vet-verde-hover) !important;
+}
+
+/* Enlaces superiores de acceso */
+.text-end.mb-3.small a {
+    color: var(--vet-verde) !important;
+    font-weight: 600;
+}
+
+.titulo-serif {
+    font-family: Georgia, 'Times New Roman', serif !important;
+}
+
+/* Efecto suave al pasar el mouse sobre la tarjeta */
+.tarjeta-noticia {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff !important;
+}
+
+.tarjeta-noticia:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Ajuste de imagen */
+.objeto-fit-cover {
+    object-fit: cover;
+}
+
+/* Botón 'Leer más' con estilo bordeado píldora */
+.btn-outline-vet-noticia {
+    border: 1px solid #c0c0c0;
+    color: #444444;
+    background-color: transparent;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-vet-noticia:hover {
+    background-color: var(--vet-verde, #1A5431);
+    border-color: var(--vet-verde, #1A5431);
+    color: #ffffff;
+}
+
+.btn-submit {
+    background-color: var(--vet-verde) !important;
+    border-color: var(--vet-verde) !important;
+    color: #ffffff !important;
+    transition: all 0.2s ease;
+}
