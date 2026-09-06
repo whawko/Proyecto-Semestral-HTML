@@ -34,3 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('Formulario enviado con éxito');
   });
 });
+
+
+
+    let nombre = document.getElementById("nombre").value;
+    let correo = document.getElementById("correo").value;
