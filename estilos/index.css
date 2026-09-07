@@ -9,6 +9,11 @@
     --vet-borde: #E0E5E2;
 }
 
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
 /* 1. TIPOGRAFÍA Y FUENTES GENERALES */
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
