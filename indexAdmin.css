@@ -162,10 +162,3 @@ footer .btn-dark:hover,
     border-color: var(--vet-verde, #1A5431);
     color: #ffffff;
 }
-
-.btn-submit {
-    background-color: var(--vet-verde) !important;
-    border-color: var(--vet-verde) !important;
-    color: #ffffff !important;
-    transition: all 0.2s ease;
-}
