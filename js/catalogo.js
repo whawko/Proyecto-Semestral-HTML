@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Dibujamos las tarjetas
     productosFiltrados.forEach(prod => {
         const div = document.createElement('div');
-        div.className = 'col hover-card'; // Reutilizamos tu clase hover-card
+        div.className = 'col hover-card';
         div.innerHTML = `
             <div class="card h-100 shadow-sm border-0 p-3">
                 <div class="card-body d-flex flex-column">
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Al hacer clic en un servicio, guardamos sus datos y vamos al último paso (prod.html)
+        // Al hacer clic en un servicio, guardamos sus datos y nos manda a prod.html
         div.addEventListener('click', () => {
             localStorage.setItem('productoSeleccionado', JSON.stringify(prod));
             window.location.href = 'prod.html';
