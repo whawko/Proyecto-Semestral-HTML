@@ -25,13 +25,15 @@ function ingresar() {
     // 4. Acceso para el Administrador (Veterinario/Recepcionista)
     if (correo === "admin@sanmarcos.cl" && clave === "admin123") {
         alert("Bienvenido al panel de administración de San Marcos.");
-        window.location.href = "indexAdmin.html"; // Cambia este nombre por el de tu página real
+        window.location.href = "indexAdmin.html"; // Cambia este nombre por el index de admin
     }
+
     // 5. Acceso para el Cliente (Dueño de la mascota)
     else if (correo === "cliente@email.com" && clave === "1234") {
         alert("Bienvenido. Redirigiendo a la pagina principal.");
-        window.location.href = "index.html"; // Cambia este nombre por el de tu página real
+        window.location.href = "index.html"; // manda a la página index de usuario
     }
+    
     // 6. Si los datos no coinciden con ninguna cuenta
     else {
         alert("Correo o contraseña incorrectos. Intenta nuevamente.");

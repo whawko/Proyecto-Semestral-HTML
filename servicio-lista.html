@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria San Marcos - Servicios</title>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="estilos/index.css">
+    <link rel="stylesheet" href="estilos/servicio.css">
+
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <header class="bg-white border-bottom shadow-sm">
+    <nav class="navbar navbar-expand-lg container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <span class="badge bg-dark p-2 rounded"> </span> Veterinaria San Marcos
+      </a>
+      <div class="collapse navbar-collapse show" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="medicamentos.html">Medicamentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link active fw-semibold text-success" href="servicio.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+            <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-cart3 fs-5"></i>
+                    <span class="fw-semibold">Cart (0)</span>
+                </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-4 flex-grow-1">
+
+    <div class="mb-4">
+        <a href="servicio.html" class="btn-volver-custom mb-3">
+        &larr; Volver a Categorías
+        </a>
+        <h1 id="nombreCategoriaHeader" class="fuente-serif display-5 fw-bold" style="color: var(--vet-verde);">
+            Cargando...
+        </h1>
+        <p class="text-secondary small m-0">Servicios veterinarios disponibles en esta sección.</p>
+    </div>
+
+    <div id="gridServicios" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+
+  </main>
+
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p class="mb-0 small text-muted">&copy; 2026 Veterinaria San Marcos. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/servicio.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const categoria = localStorage.getItem("categoriaServicioSeleccionada");
+      const tituloHeader = document.getElementById("nombreCategoriaHeader");
+      const grid = document.getElementById("gridServicios");
+
+      if (!categoria) {
+        window.location.href = "servicio.html";
+        return;
+      }
+
+      tituloHeader.textContent = categoria;
+
+      const todosServicios = JSON.parse(localStorage.getItem("serviciosVet")) || [];
+      const serviciosFiltrados = todosServicios.filter(
+        item => item.categoria.toLowerCase() === categoria.toLowerCase()
+      );
+
+      if (serviciosFiltrados.length === 0) {
+        grid.innerHTML = `
+          <div class="col-12">
+            <div class="alert alert-light border text-center py-4 text-muted">
+              No hay servicios disponibles en esta categoría.
+            </div>
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = "";
+serviciosFiltrados.forEach(serv => {
+  grid.innerHTML += `
+    <div class="col">
+      <div class="card-servicio-item">
+        
+        <!-- Fila superior: Categoría/Especie en verde y Código en gris oscuro/negro a la derecha -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">${serv.especie}</span>
+          <span class="text-secondary small fw-medium">${serv.codigo}</span>
+        </div>
+
+        <!-- Nombre del servicio -->
+        <h2 class="titulo-servicio">${serv.nombre}</h2>
+
+        <!-- Descripciones en color negro/texto oscuro -->
+        <p class="text-dark small mb-1">
+          <strong>Duración:</strong> <span class="text-secondary">${serv.duracion}</span>
+        </p>
+        <p class="text-dark small mb-4 flex-grow-1">
+          <strong>Detalle:</strong> <span class="text-secondary">${serv.observaciones ? serv.observaciones : "Atención clínica especializada."}</span>
+        </p>
+
+        <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+          <span class="fs-5 fw-bold text-success">$${Number(serv.precio).toLocaleString("es-CL")}</span>
+          <button onclick="verDetalleServicio('${serv.codigo}')" class="btn btn-outline-success btn-sm rounded-pill px-3">
+            Ver detalle &rarr;
+          </button>
+        </div>
+
+      </div>
+    </div>
+  `;
+});
+    });
+  </script>
+</body>
+</html>

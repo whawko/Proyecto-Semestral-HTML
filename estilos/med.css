@@ -1,0 +1,56 @@
+/* Tarjeta principal estilo wireframe de la referencia */
+.card-categoria-medica {
+  background-color: #ffffff;
+  border: 1.5px solid #d9dfdb;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-categoria-medica:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Recuadro superior con el borde negro y fondo verde suave */
+.caja-icono-visual {
+  background-color: #ebf3ee;
+  border: 2px solid #1e2922;
+  border-radius: 4px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Ilustraciones vectoriales SVG personalizadas */
+.icono-svg-medico {
+  width: 72px;
+  height: 72px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12));
+  transition: transform 0.25s ease;
+}
+
+.card-categoria-medica:hover .icono-svg-medico {
+  transform: scale(1.12);
+}
+
+/* Título inferior */
+.titulo-categoria-texto {
+  color: var(--vet-verde, #1a5431);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  text-decoration: none;
+}
+
+header {
+  position: relative;
+  z-index: 1050; /* Lo coloca por encima de cualquier tarjeta o banner */
+}

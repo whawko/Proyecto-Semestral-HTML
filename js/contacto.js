@@ -1,4 +1,5 @@
 function enviarmensaje() {
+
     // Capturar los valores exactos ingresados por el usuario
     let nombre = document.getElementById("nombre").value;
     let correo = document.getElementById("correo").value;
@@ -44,16 +45,4 @@ function enviarmensaje() {
         alert("Correo o contraseña incorrectos. Intenta nuevamente.");
     }
 
-    const formulario = document.getElementById('mi-formulario');
-
-    formulario.addEventListener('submit', function(evento) {
-    // Evita que el formulario se envíe de inmediato
-    evento.preventDefault(); 
-
-    // Muestra tu mensaje o alerta
-    alert('¡Mensaje enviado con éxito!');
-
-    // Si quieres que se envíe después de la alerta, puedes usar:
-    // formulario.submit();
-  });
 }

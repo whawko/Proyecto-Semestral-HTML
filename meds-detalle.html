@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria San Marcos - Detalle de Producto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="estilos/index.css">
+  <link rel="stylesheet" href="estilos/med.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <!-- Header / Navbar unificado -->
+  <header class="bg-white border-bottom shadow-sm">
+    <nav class="navbar navbar-expand-lg container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <span class="badge bg-dark p-2 rounded"> </span> Veterinaria San Marcos
+      </a>
+      <div class="collapse navbar-collapse show" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active fw-semibold" href="medicamentos.html">Medicamentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicio.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-cart3 fs-5"></i>
+                    <span class="fw-semibold">Cart (0)</span>
+                </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5 flex-grow-1">
+
+    <!-- Botón para regresar a los productos de la categoría -->
+    <div class="mb-4">
+      <a href="meds-lista.html" class="btn btn-outline-success btn-sm">
+        <i class="bi bi-arrow-left"></i> Volver a Productos
+      </a>
+    </div>
+
+    <!-- Ficha del medicamento -->
+    <div class="card bg-white border rounded-4 shadow-sm p-4 p-md-5">
+      <div class="row g-4 align-items-center">
+
+        <!-- Caja visual con icono representativo -->
+        <div class="col-lg-5 text-center">
+          <div class="caja-imagen-detalle">
+            <i class="bi bi-capsule text-success" style="font-size: 6rem;"></i>
+          </div>
+        </div>
+
+        <!-- Características clínicas y stock -->
+        <div class="col-lg-7">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span id="detCodigo" class="badge-codigo">ME000</span>
+            <span id="detCategoria" class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 py-1 px-2">Categoría</span>
+          </div>
+
+          <h1 id="detNombre" class="titulo-medicamento mb-1">Cargando medicamento...</h1>
+          <p id="detEspecie" class="text-secondary fw-semibold mb-3">Especie: -</p>
+
+          <div class="mb-4">
+            <span class="text-muted small d-block">Precio unitario:</span>
+            <div id="detPrecio" class="precio-destacado">$0 CLP</div>
+          </div>
+
+          <h5 class="fw-bold border-bottom pb-2 mb-3 text-dark">Especificaciones del Producto</h5>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <span class="text-muted d-block small">Principio Activo</span>
+              <strong id="detPrincipio" class="text-dark fs-6">-</strong>
+            </div>
+            <div class="col-sm-6">
+              <span class="text-muted d-block small">Presentación</span>
+              <strong id="detPresentacion" class="text-dark fs-6">-</strong>
+            </div>
+            <div class="col-sm-6">
+              <span class="text-muted d-block small">Disponibilidad en clínica</span>
+              <span class="badge bg-success-subtle text-success border border-success-subtle mt-1 px-2 py-1 fs-6">
+                <span id="detStock">0</span> unidades en stock
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p class="mb-0 small text-muted">&copy; 2026 Veterinaria San Marcos. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/meds.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Obtener el código guardado por la función verDetalleProducto()
+      const codigo = localStorage.getItem("productoDetalleCodigo");
+      
+      // 2. Obtener la lista guardada bajo la clave exacta "medicamentosvet"
+      const medicamentos = JSON.parse(localStorage.getItem("medicamentosvet")) || [];
+      
+      // 3. Buscar el medicamento seleccionado
+      const item = medicamentos.find(m => m.codigo === codigo);
+
+      if (!item) {
+        alert("No se encontró la información del medicamento seleccionado.");
+        window.location.href = "meds-lista.html";
+        return;
+      }
+
+      // 4. Cargar la información en el DOM
+      document.getElementById("detCodigo").textContent = item.codigo;
+      document.getElementById("detCategoria").textContent = item.categoria;
+      document.getElementById("detNombre").textContent = item.nombre;
+      document.getElementById("detEspecie").textContent = `Especie indicada: ${item.especie}`;
+      document.getElementById("detPrecio").textContent = `$${Number(item.precio).toLocaleString("es-CL")} CLP`;
+      document.getElementById("detPrincipio").textContent = item.principio;
+      document.getElementById("detPresentacion").textContent = item.presentacion;
+      document.getElementById("detStock").textContent = item.stock;
+    });
+  </script>
+</body>
+</html>
