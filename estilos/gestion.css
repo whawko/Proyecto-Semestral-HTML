@@ -1,0 +1,67 @@
+/* ESTILOS DE LA TABLA DE GESTIÓN DE USUARIOS */
+.bg-vet-suave {
+    background-color: #f1f7f3 !important;
+}
+
+/* Badges de Roles */
+.badge-rol {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.badge-admin {
+    background-color: #f3e8ff;
+    color: #7e22ce;
+}
+
+.badge-cliente {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.badge-recep {
+    background-color: #e0e7ff;
+    color: #4338ca;
+}
+
+/* Badge de Estado */
+.badge-estado {
+    background-color: #ebf3ed;
+    color: #1a5431;
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+/* Botones de Acción */
+.btn-vet-editar {
+    background-color: #eaf5ed;
+    color: #1a5431;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 4px 14px;
+    border: none;
+}
+
+.btn-vet-editar:hover {
+    background-color: #d1e7d7;
+    color: #133e24;
+}
+
+.btn-vet-desactivar {
+    background-color: #b91c1c;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 4px 14px;
+    border: none;
+}
+
+.btn-vet-desactivar:hover {
+    background-color: #991b1b;
+    color: #ffffff;
+}
